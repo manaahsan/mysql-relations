@@ -42,7 +42,6 @@ export class UsersService {
   }
   async createUsersProfile(id: number, userProfileDetails: UsersProfileParams) {
     const user = await this.userRepository.findOneBy({ id });
-    console.log(user);
 
     if (!user) {
       throw new HttpException('user not found', HttpStatus.BAD_REQUEST);
@@ -61,8 +60,6 @@ export class UsersService {
 
   async createUsersPost(id: number, userPostDetails: any) {
     const user = await this.userRepository.findOneBy({ id });
-    console.log(user);
-
     if (!user) {
       throw new HttpException('user not found', HttpStatus.BAD_REQUEST);
     }
